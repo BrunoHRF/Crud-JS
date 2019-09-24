@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Users Database
+        </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <form onsubmit="event.preventDefault();onForm()" id="userForm" autocomplete="off">
+                        <div>
+                            <label>Full name</label>
+                            <input type="text" id="userName" placeholder="Joel Murach">
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input type="text" id="userEmail" placeholder="User@email.com">
+                        </div>
+                        <div>
+                            <label>Salary</label>
+                            <input type="text" id="userSalary" placeholder=$1000,00>
+                        </div>
+                        <div>
+                            <label>City</label>
+                            <input type="text" id="userCity" placeholder="Palo Alto/CA">
+                        </div>
+                        <div class="form-action-buttons">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </td>
+                    <table id="userList">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Salary</th>
+                                <th>City</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                <td>
+                </td>
+            </tr>
+        </table>
+        <script src="main.js"></script>
+    </body>
+</html>

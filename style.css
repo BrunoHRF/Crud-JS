@@ -1,0 +1,15 @@
+body>table{
+    width: 80%;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+#userName,#userCity,#userEmail,#userSalary,#userEmail{
+    width: 50%;
+}
+th,td{
+    border: 1px;
+    text-align: left;
+    padding: 10px;
+}
