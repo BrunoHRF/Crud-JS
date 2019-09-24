@@ -1,6 +1,7 @@
 function onForm(){
     let formData = readFormData();
     insertData(formData);
+    resetData();
 }
 function readFormData(){
     let formData = {};
@@ -18,8 +19,17 @@ function insertData(data){
     cell2 = newRow.insertCell(1);
     cell2.innerHTML = data.userEmail;
     cell3 = newRow.insertCell(2);
-    cell3.innerHTML = data.userCity;
+    cell3.innerHTML = data.userSalary;
     cell4 = newRow.insertCell(3);
-    cell4.innerHTML = data.userSalary;
-    cell4.innerHTML = "<a>Edit</a><a>Delete</a>"
+    cell4.innerHTML = data.userCity;
+    cell5 = newRow.insertCell(4);
+    cell5.innerHTML =`<a>Edit</a>
+                    <a>Delete</a>`;
+}
+function resetData (){
+    document.getElementById("userName").value = "";
+    document.getElementById("userEmail").value = "";
+    document.getElementById("userSalary").value = "";
+    document.getElementById("userCity").value = "";
+
 }
