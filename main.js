@@ -4,6 +4,9 @@ function onForm(){
     if(selectedRow == null){
         insertData(formData);
     }
+    else{
+        updatedData(formData);
+    }
     resetData();
 }
 function readFormData(){
@@ -27,13 +30,15 @@ function insertData(data){
     cell4.innerHTML = data.userCity;
     cell4 = newRow.insertCell(4);
     cell4.innerHTML =`<button onClick ="onEdit(this)">Edit</button>
-                    <button>Delete</button>`;
+                    <button onClick ="onDelete(this)">Delete</button>`;
 }
 function resetData (){
     document.getElementById("userName").value = "";
     document.getElementById("userEmail").value = "";
     document.getElementById("userSalary").value = "";
     document.getElementById("userCity").value = "";
+    selectedRow = null;
+
 }
 function onEdit(td){
     selectedRow = td.parentElement.parentElement;
@@ -41,4 +46,17 @@ function onEdit(td){
     document.getElementById("userEmail").value = selectedRow.cells[1].innerHTML;
     document.getElementById("userSalary").value = selectedRow.cells[2].innerHTML;
     document.getElementById("userCity").value = selectedRow.cells[3].innerHTML;
+}
+function updatedData(formData){
+    selectedRow.cells[0].innerHTML = formData.userName;
+    selectedRow.cells[1].innerHTML = formData.userEmail;
+    selectedRow.cells[2].innerHTML = formData.userSalary;
+    selectedRow.cells[3].innerHTML = formData.userCity;
+}
+function onDelete(td){
+    if(confirm(`${userName}, esses dados serão deletados, você confirma?`)){
+        row = td.parentElement.parentElement;
+        document.getElementById("userList").deleteRow(row.rowIndex);
+        resetData();
+    }
 }
