@@ -1,12 +1,7 @@
 var selectedRow = null;
 function onForm(){
     let formData = readFormData();
-    if(selectedRow == null){
-        insertData(formData);
-    }
-    else{
-        updatedData(formData);
-    }
+    selectedRow == null? insertData(formData) : updatedData(formData);
     resetData();
 }
 function readFormData(){
